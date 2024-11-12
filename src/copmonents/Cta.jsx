@@ -34,20 +34,26 @@ const CTASection = () => (
       {/* Call-to-Action Button */}
       <Button
         variant="contained"
+        color="secondary"
+        size="large"
         sx={{
+          backgroundColor: 'transparent',
+          color: '#ffffff',
+          fontWeight: 'bold',
+          textTransform: 'none',
+          border:"1px solid white",
           px: 4,
           py: 1.5,
-          fontSize: '1rem',
-          fontWeight: 'bold',
-          borderRadius: '30px',
-          backgroundColor: '#ff8c00',
-          color: '#ffffff',
+          borderRadius: '10px',
+        //   animation: `${fadeIn} 2s ease-out forwards`,
+          animationDelay: '0.5s',
           ':hover': {
-            backgroundColor: '#ff9500',
+            // animation: `${pulse} 1.5s infinite`,
+            // backgroundColor: '#ff9500',
           },
         }}
       >
-        Join Waitlist
+       Join Waitlist
       </Button>
     </Container>
   </Box>

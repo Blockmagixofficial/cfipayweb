@@ -113,18 +113,19 @@ const HeroSection = () =>{
         color="secondary"
         size="large"
         sx={{
-          backgroundColor: '#ff8c00',
-          color: '#fff',
+          backgroundColor: 'transparent',
+          color: '#ffffff',
           fontWeight: 'bold',
           textTransform: 'none',
+          border:"1px solid white",
           px: 4,
           py: 1.5,
-          borderRadius: '50px',
+          borderRadius: '10px',
           animation: `${fadeIn} 2s ease-out forwards`,
           animationDelay: '0.5s',
           ':hover': {
             animation: `${pulse} 1.5s infinite`,
-            backgroundColor: '#ff9500',
+            // backgroundColor: '#ff9500',
           },
         }}
       >
