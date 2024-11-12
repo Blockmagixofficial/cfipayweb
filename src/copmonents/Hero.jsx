@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Container, Typography } from '@mui/material'
+import { Box, Button, Container, Typography,useMediaQuery } from '@mui/material'
 import { keyframes } from '@emotion/react'
 
 // Keyframes for subtle animations
@@ -14,11 +14,14 @@ const pulse = keyframes`
   100% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0); }
 `
 
-const HeroSection = () => (
+const HeroSection = () =>{
+  const isMobile = useMediaQuery("(max-width:600px)");
+  return (
+  
   <Box
     sx={{
       position: 'relative',
-      height: '100vh',
+      height: !isMobile ? '100vh' : "70vh",
       color: '#fff',
       display: 'flex',
       alignItems: 'center',
@@ -147,5 +150,6 @@ const HeroSection = () => (
     /> */}
   </Box>
 )
+}
 
 export default HeroSection

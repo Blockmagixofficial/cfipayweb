@@ -1,8 +1,17 @@
-import { Box, Typography, Button, IconButton } from '@mui/material'
+import React, { useState } from 'react'
+import { Box, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import logo from '../assets/logo.png'
 
 const Navbar = () => {
+  // State to control the drawer's open/close state
+  const [isDrawerOpen, setDrawerOpen] = useState(false)
+
+  // Function to toggle the drawer state
+  const toggleDrawer = (open) => () => {
+    setDrawerOpen(open)
+  }
+
   return (
     <Box
       sx={{
@@ -72,11 +81,40 @@ const Navbar = () => {
               display: { xs: 'flex', md: 'none' },
               color: '#2752E7',
             }}
+            onClick={toggleDrawer(true)}
           >
             <MenuIcon />
           </IconButton>
         </Box>
       </Box>
+
+      {/* Drawer for Sidebar on Mobile */}
+      <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}>
+        <Box
+          sx={{ width: 250 }}
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+        >
+          <List>
+            <ListItem button>
+              <ListItemText primary="About Us" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Vision" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Business" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Teams" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Contact Us" />
+            </ListItem>
+          </List>
+        </Box>
+      </Drawer>
     </Box>
   )
 }
